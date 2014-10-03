@@ -931,10 +931,10 @@
             yy : '%d years'
         },
 
-        relativeTime : function (number, withoutSuffix, string, isFuture) {
+        relativeTime : function (number, withoutSuffix, string, isFuture, data) {
             var output = this._relativeTime[string];
             return (typeof output === 'function') ?
-                output(number, withoutSuffix, string, isFuture) :
+                output(number, withoutSuffix, string, isFuture, data) :
                 output.replace(/%d/i, number);
         },
 
@@ -1638,8 +1638,8 @@
 
 
     // helper function for moment.fn.from, moment.fn.fromNow, and moment.duration.fn.humanize
-    function substituteTimeAgo(string, number, withoutSuffix, isFuture, locale) {
-        return locale.relativeTime(number || 1, !!withoutSuffix, string, isFuture);
+    function substituteTimeAgo(string, number, withoutSuffix, isFuture, locale, data) {
+        return locale.relativeTime(number || 1, !!withoutSuffix, string, isFuture, data);
     }
 
     function relativeTime(posNegDuration, withoutSuffix, locale) {
@@ -1665,6 +1665,7 @@
         args[2] = withoutSuffix;
         args[3] = +posNegDuration > 0;
         args[4] = locale;
+        args[5] = {"seconds": seconds, "minutes": minutes, "hours": hours, "days": days, "years": years};
         return substituteTimeAgo.apply({}, args);
     }
 
