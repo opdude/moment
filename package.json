@@ -1,7 +1,7 @@
 {
     "name": "moment",
-    "version": "2.8.3",
-    "description": "Parse, manipulate, and display dates.",
+    "version": "2.10.3",
+    "description": "Parse, validate, manipulate, and display dates",
     "homepage": "http://momentjs.com",
     "author": "Iskren Ivov Chernev <iskren.chernev@gmail.com> (https://github.com/ichernev)",
     "contributors": [
@@ -33,35 +33,35 @@
     "bugs": {
         "url": "https://github.com/moment/moment/issues"
     },
-    "licenses": [
-        {
-            "type": "MIT"
-        }
-    ],
+    "license": "MIT",
     "devDependencies": {
         "uglify-js": "latest",
+        "es6-promise": "latest",
         "grunt": "latest",
-        "nodeunit": "latest",
         "benchmark": "latest",
-        "grunt-contrib-jshint": "latest",
-        "grunt-contrib-nodeunit": "latest",
+        "esperanto": "latest",
+        "grunt-contrib-clean": "latest",
         "grunt-contrib-concat": "latest",
+        "grunt-contrib-copy": "latest",
+        "grunt-contrib-jshint": "latest",
         "grunt-contrib-uglify": "latest",
         "grunt-contrib-watch": "latest",
         "grunt-env": "latest",
         "grunt-jscs": "latest",
         "grunt-karma": "latest",
+        "grunt-nuget": "latest",
         "grunt-benchmark": "latest",
         "grunt-string-replace": "latest",
+        "grunt-exec": "latest",
         "load-grunt-tasks": "latest",
         "karma": "latest",
         "karma-chrome-launcher": "latest",
         "karma-firefox-launcher": "latest",
-        "karma-nodeunit": "latest",
-        "karma-sauce-launcher": "latest"
-    },
-    "scripts": {
-        "test": "grunt test:node"
+        "karma-qunit": "latest",
+        "karma-sauce-launcher": "latest",
+        "qunit": "^0.7.5",
+        "qunit-cli": "^0.1.4",
+        "spacejam": "latest"
     },
     "ender": "./ender.js",
     "dojoBuild": "package.js",
@@ -76,6 +76,9 @@
         "buildConfig": {
             "uglify": true
         }
+    },
+    "scripts": {
+        "test": "grunt test"
     },
     "spm": {
         "main": "moment.js",
